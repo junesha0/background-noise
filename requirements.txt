@@ -1,4 +1,4 @@
---upgrade pip
+pip --upgrade
 pandas
 numpy
 scikit-learn
