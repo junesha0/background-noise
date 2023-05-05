@@ -7,3 +7,4 @@ matplotlib
 IPython
 tqdm
 gunicorn
+Flask
