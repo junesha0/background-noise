@@ -33,11 +33,8 @@ thisdir = pathlib.Path(
 app.config['UPLOAD_FOLDER'] = './Uploads'
 
 
-def get_prediction(file):
+def get_prediction(audio, sample_rate):
     model = load_model('./model_weights.h5')
-  
-    # load audio from buffer using librosa
-    audio, sample_rate = librosa.load(file, res_type='kaiser_fast')
     
     mfccs_features = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc=40)
     mfccs_scaled_features = np.mean(mfccs_features.T, axis=0)
@@ -68,11 +65,16 @@ def get_prediction(file):
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        file = request.files['audio_file']
-        filename = secure_filename(file.filename)
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(file_path)
-        result = get_prediction(file_path)   
+        if 'file' not in request.files:
+            return 'No file uploaded'
+        file = request.files['file']
+        if file.filename == '':
+            return 'No file selected'
+        try:
+            audio_data, sr = librosa.load(file, sr=None)
+        except Exception as e:
+            return f'Error processing file: {e}'
+        result = get_prediction(audio_data, sr)   
 
         return render_template('result.html', RESULT=result)
     return render_template('upload.html')
