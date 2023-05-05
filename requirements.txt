@@ -6,3 +6,4 @@ librosa
 matplotlib
 IPython
 tqdm
+gunicorn
