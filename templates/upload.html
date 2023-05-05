@@ -8,18 +8,13 @@
 <body style="background-color: #d4cab8;">
     <div style="width:50%; margin: auto; text-align: center">
     <h1 style="margin: 3em"> UPLOAD </h1>
-        <form id="form" method="POST" enctype="multipart/form-data">
+        <form id="my_form" method="POST" enctype="multipart/form-data">
             <div style="margin: 2em">
                 <!-- https://stackoverflow.com/questions/58513718/how-to-read-process-an-audio-file-sent-in-a-post-request-to-a-flask-api -->
-                <input id="audio_file" name="audio_file" type="file" accept=".wav">
+                <input id="audio_file" name="file" type="file" accept=".wav">
                 <input type="submit" style="background-color:black; color:white; padding: 0.5em 1em; border-radius: 1em">
             </div>
-            
-            
         </form>
-        
-
-        
     </div>
 </body>
 </html>
