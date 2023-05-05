@@ -6,7 +6,6 @@ import numpy as np
 import IPython.display as ipd
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-%matplotlib inline
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -26,7 +25,7 @@ def features_extractor(file):
     
    
 # Read csv file
-audio_dataset_path='/content/'
+audio_dataset_path='./Downloads'
 metadata=pd.read_csv('UrbanSound8K.csv')
 metadata.head()
 
