@@ -1,30 +1,11 @@
-from typing import Dict, List, Optional
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request
 import pathlib
-import uuid
-import json
 import pandas as pd
-import os
 import librosa
 import librosa.display
 import numpy as np
-import IPython.display as ipd
-from tqdm import tqdm
-import matplotlib.pyplot as plt
-from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten
-from tensorflow.keras.optimizers import Adam
-from sklearn import metrics   
-from tensorflow.keras.callbacks import ModelCheckpoint
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Activation
 from tensorflow.keras.models import load_model
-import os
-from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 thisdir = pathlib.Path(
@@ -82,4 +63,3 @@ def upload_file():
 
 if __name__ == '__main__':
   app.run(port=5000, debug=True)
-
