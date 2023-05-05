@@ -1,6 +1,6 @@
 pandas
 numpy
-skikit-learn
+scikit-learn
 tensorflow
 librosa
 matplotlib
