@@ -24,6 +24,7 @@ External libraries:
 
 Main sources:
 * https://www.section.io/engineering-education/machine-learning-for-audio-classification/
+* Dataset: https://www.kaggle.com/datasets/chrisfilo/urbansound8k?resource=download
 * https://stackoverflow.com/questions/58513718/how-to-read-process-an-audio-file-sent-in-a-post-request-to-a-flask-api 
 * chatgpt
 ________________
